@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         stopOnError="false" stopOnFailure="false"
+         stopOnWarning="false"
+         stopOnIncomplete="false"
+         stopOnRisky="false"
+         stopOnSkipped="false"
+         failOnRisky="false"
+         failOnWarning="false"
+         beStrictAboutChangesToGlobalState="false"
+         beStrictAboutOutputDuringTests="false"
+         beStrictAboutResourceUsageDuringSmallTests="false"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         beStrictAboutTodoAnnotatedTests="false"
+         beStrictAboutCoversAnnotation="false"
+         enforceTimeLimit="false"
+         verbose="false">
+    <coverage>
+        <include>
+            <directory>src</directory>
+        </include>
+        <exclude>
+            <directory>src/*/Tests</directory>
+            <directory>src/*/*/Tests</directory>
+            <directory>src/*/*/*/Tests</directory>
+            <directory>src/*/*/*/*/Tests</directory>
+            <directory>src/*/*/*/*/*/Tests</directory>
+        </exclude>
+    </coverage>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="functional">
+            <directory>tests/Functional</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="-1"/>
+        <const name="PHPUNIT_LOAD_LIMIT" value="1.2"/>
+        <const name="PHPUNIT_PAGE_LIMIT" value="0.5"/>
+        <const name="PHPUNIT_TESTSUITE" value="true"/>
+        <const name="MAX_EXECUTION_TIME" value="240000"/>
+        <const name="TIME_OUT" value="5000"/>
+    </php>
+</phpunit>

@@ -1,0 +1,20 @@
+version: '3'
+services:
+    akuma_centrifugo:
+        container_name: akuma_centrifugo
+        image: centrifugo/centrifugo:v4.1
+        environment:
+            - CENTRIFUGO_API_KEY=akuma-cent-api-key
+            - CENTRIFUGO_TOKEN_HMAC_SECRET_KEY=akuma-cent-token-hmac-secret-key
+
+            - CENTRIFUGO_ADMIN=true
+            - CENTRIFUGO_ADMIN_PASSWORD=admin
+            - CENTRIFUGO_ADMIN_SECRET=akuma-admin-secret
+
+            - CENTRIFUGO_LOG_LEVEL=trace
+        command: centrifugo --health --debug
+        ports:
+            - "8569:8000"
+        volumes:
+            - ./config.json:/centrifugo/config.json
+

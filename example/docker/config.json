@@ -1,0 +1,20 @@
+{
+  "allowed_origins": [
+    "https://*.akuma.local",
+    "http://*.akuma.local",
+    "https://akuma.local",
+    "http://akuma.local"
+  ],
+  "allow_subscribe_for_client": true,
+  "allow_publish_for_subscriber": true,
+  "publish": true,
+  "uni_websocket": true,
+  "client_anonymous": true,
+  "debug": true,
+  "presence": true,
+  "namespaces": [
+    {
+      "name": "pacl-example"
+    }
+  ]
+}
